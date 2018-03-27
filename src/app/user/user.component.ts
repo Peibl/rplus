@@ -12,14 +12,24 @@ import {Router} from '@angular/router';
 export class UserComponent implements OnInit {
   displayedColumns = ['id', 'username', 'salary', 'age'];
   dataSource = new MatTableDataSource<User>();
+  screenWidth: number;
+
   constructor(private router: Router, private userService: UserService) {
   }
+
   ngOnInit(): void {
     // this.userService.getUsers().subscribe(
     //   data => {
     //     this.dataSource.data = data;
     //   }
     // );
+
+    // set screenWidth on page load
+    this.screenWidth = window.innerWidth;
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
   }
 }
 

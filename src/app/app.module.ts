@@ -13,6 +13,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthService} from './core/auth.service';
 import {Interceptor} from './core/inteceptor';
 import {TokenStorage} from './core/token.storage';
+import {ComponentsModule} from './components/components.module';
+import {MatSidenavModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {TokenStorage} from './core/token.storage';
     BrowserAnimationsModule,
     CustomMaterialModule,
     FormsModule,
-    AppRoutingModule
+    ComponentsModule,
+    AppRoutingModule,
+
   ],
   entryComponents: [ErrorDialogComponent],
   providers: [ErrorDialogComponent, UserService, AuthService, TokenStorage, TokenStorage,
